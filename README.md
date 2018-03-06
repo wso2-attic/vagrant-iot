@@ -41,7 +41,7 @@ Virtualization should be enabled in BIOS settings before building the boxes.
     https://172.28.128.5:9443/devicemgt
 ```
 
-* API Publisher
+* APP Publisher
 
 ```
     https://172.28.128.5:9443/publisher/
