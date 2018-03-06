@@ -335,3 +335,4 @@ do
     org.wso2.carbon.bootstrap.Bootstrap $*
     status=$?
 done
+
