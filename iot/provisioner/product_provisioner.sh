@@ -55,12 +55,15 @@ fi
 
 #moving MySQL driver
 echo "Copying the MySQL driver to the server pack..."
-cp ${WORKING_DIRECTORY}/${MYSQL_CONNECTOR} ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/repository/components/lib/${MYSQL_CONNECTOR}
+cp ${WORKING_DIRECTORY}/${MYSQL_CONNECTOR} ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/lib/${MYSQL_CONNECTOR}
 echo "Successfully copied the MySQL driver to the server pack."
 
 # copy files with configuration changes
 echo "Copying the files with configuration changes to the server pack..."
-cp -TRv ${CONFIGURATIONS}/repository/conf/ ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/conf/datasources
+cp -TRv ${CONFIGURATIONS}/repository/conf/ ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/conf/
+cp -TRv ${CONFIGURATIONS}/bin/ ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/bin/
+cp -TRv ${CONFIGURATIONS}/repository/deployment/ ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/repository/deployment/
+cp -TRv ${CONFIGURATIONS}/repository/resources/security ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/repository/resources/security/
 echo "Successfully copied the files."
 
 export JAVA_HOME
@@ -68,7 +71,7 @@ export WUM_PATH
 
 # start the WSO2 product pack as a background service
 echo "Starting ${WSO2_SERVER}-${WSO2_SERVER_VERSION}..."
-sh ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/bin/wso2server.sh start
+sh ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/bin/iot-server.sh start
 
 sleep 10
 
@@ -78,7 +81,7 @@ do
   # echo each log line
   echo "${LOG_LINE}"
   # once the log line with WSO2 Carbon server start confirmation was logged, kill the started tail process
-  [[ "${LOG_LINE}" == *"WSO2 Carbon started"* ]] && pkill tail
+  [[ "${LOG_LINE}" == *"admin--android_sense was added to the Synapse configuration successfully"* ]] && pkill tail
 done
 
-echo "Management console URL: https://172.28.128.4:9443/carbon"
+echo "Management console URL: https://172.28.128.5:9443/carbon"

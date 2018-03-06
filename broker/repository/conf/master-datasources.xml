@@ -41,10 +41,10 @@
         </datasource-->
 
         <datasource>
-            <name>CARBON_DB</name>
+            <name>WSO2_CARBON_DB</name>
             <description>The datasource used for registry and user manager</description>
             <jndiConfig>
-                <name>jdbc/CarbonDB</name>
+                <name>jdbc/WSO2CarbonDB</name>
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
