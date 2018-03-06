@@ -28,17 +28,19 @@ servers:
     cpu: 1
     provisioner_script: broker/provisioner/product_provisioner.sh
   -
-    hostname: iot-server
-    box: wso2iot
-    ip: 172.28.128.5
-    ram: 2048
-    cpu: 1
-    provisioner_script: iot/provisioner/product_provisioner.sh
-  -
     hostname: analytics
     box: wso2iot
     ip: 172.28.128.6
     ram: 2048
     cpu: 1
     provisioner_script: analytics/provisioner/product_provisioner.sh
+  -
+    hostname: iot-server
+    box: wso2iot
+    ip: 172.28.128.5
+    ram: 2048
+    cpu: 1
+    provisioner_script: iot/provisioner/product_provisioner.sh
+
+
 
