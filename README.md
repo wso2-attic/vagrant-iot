@@ -44,12 +44,12 @@ Virtualization should be enabled in BIOS settings before building the boxes.
 * APP Publisher
 
 ```
-    https://172.28.128.5:9443/publisher/
+    https://172.28.128.5:9443/publisher
 ```
 
 * Carbon
 
 ```
-    https://172.28.128.5:9443/carbon/
+    https://172.28.128.5:9443/carbon
 ```
 
