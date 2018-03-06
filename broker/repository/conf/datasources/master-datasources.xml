@@ -1,3 +1,18 @@
+<!-- # Copyright 2018 WSO2, Inc. (http://wso2.com)
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License
+ -->
+
 <datasources-configuration>
 
     <providers>
@@ -48,7 +63,28 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:mysql://172.28.128.3:3306/carbon_db?autoReconnect=true</url>
+                    <url>jdbc:h2:repository/database/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000</url>
+                    <username>wso2carbon</username>
+                    <password>wso2carbon</password>
+                    <driverClassName>org.h2.Driver</driverClassName>
+                    <maxActive>50</maxActive>
+                    <maxWait>60000</maxWait>
+                    <testOnBorrow>true</testOnBorrow>
+                    <validationQuery>SELECT 1</validationQuery>
+                    <validationInterval>30000</validationInterval>
+                </configuration>
+            </definition>
+        </datasource>
+        
+        <datasource>
+            <name>WSO2_USER_DB</name>
+            <description>The datasource is used for user mangement and userstore</description>
+            <jndiConfig>
+                <name>jdbc/WSO2_USER_DB</name>
+            </jndiConfig>
+            <definition type="RDBMS">
+                <configuration>
+                    <url>jdbc:mysql://172.28.128.3:3306/WSO2_USER_DB?autoReconnect=true</url>
                     <username>root</username>
                     <password>wso2carbon</password>
                     <driverClassName>com.mysql.jdbc.Driver</driverClassName>
@@ -57,27 +93,24 @@
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
-                    <defaultAutoCommit>false</defaultAutoCommit>
                 </configuration>
             </definition>
         </datasource>
 
-        <!-- WSO2 MB embedded H2 Store     -->
-        
         <datasource>
             <name>WSO2_MB_STORE_DB</name>
-            <description>The datasource used for message broker database</description>
             <jndiConfig>
                 <name>WSO2MBStoreDB</name>
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2MB_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000</url>
-                    <username>wso2carbon</username>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <url>jdbc:mysql://172.28.128.3:3306/WSO2_MB_STORE_DB?autoReconnect=true</url>
+                    <username>root</username>
                     <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
@@ -208,4 +241,3 @@
 
     </datasources>
 </datasources-configuration>
-
