@@ -34,8 +34,22 @@ Virtualization should be enabled in BIOS settings before building the boxes.
     vagrant up
 ```
 
-4. Access the status device management console via the given URL
+4. Access the API Publisher and Device Management via the URLs given below.
 
+* Device Management
 ```
     https://172.28.128.5:9443/devicemgt
 ```
+
+* API Publisher
+
+```
+    https://172.28.128.5:9443/publisher/
+```
+
+* Carbon
+
+```
+    https://172.28.128.5:9443/carbon/
+```
+
