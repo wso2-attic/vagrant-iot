@@ -42,5 +42,3 @@ servers:
     cpu: 1
     provisioner_script: iot/provisioner/product_provisioner.sh
 
-
-
