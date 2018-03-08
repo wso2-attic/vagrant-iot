@@ -38,18 +38,17 @@ Virtualization should be enabled in BIOS settings before building the boxes.
 
 * Device Management
 ```
-    https://172.28.128.5:9443/devicemgt
+    https://localhost:9443/devicemgt
 ```
 
 * APP Publisher
 
 ```
-    https://172.28.128.5:9443/publisher
+    https://localhost:9443/publisher
 ```
 
 * Carbon
 
 ```
-    https://172.28.128.5:9443/carbon
+    https://localhost:9443/carbon
 ```
-

@@ -26,6 +26,9 @@ WUM_PATH=PATH=$PATH:/usr/local/wum/bin
 DEFAULT_MOUNT=/vagrant
 CONFIGURATIONS=${DEFAULT_MOUNT}/iot
 
+# operate in anti-fronted mode with no user interaction
+export DEBIAN_FRONTEND=noninteractive
+
 # install utility software
 echo "Installing software utilities."
 apt-get install unzip
@@ -85,4 +88,3 @@ do
 done
 
 echo "Management console URL: https://172.28.128.5:9443/carbon"
-

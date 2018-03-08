@@ -38,7 +38,8 @@ servers:
     hostname: iot-server
     box: wso2iot
     ip: 172.28.128.5
+    ports:
+      - 9443
     ram: 2048
     cpu: 1
     provisioner_script: iot/provisioner/product_provisioner.sh
-
