@@ -20,6 +20,7 @@ servers:
     ram: 2048
     cpu: 1
     provisioner_script: mysql/provisioner/db_provisioner.sh
+    conf_dir: mysql/scripts
   -
     hostname: broker
     box: wso2iot
@@ -27,6 +28,7 @@ servers:
     ram: 2048
     cpu: 1
     provisioner_script: broker/provisioner/product_provisioner.sh
+    conf_dir: broker/repository
   -
     hostname: analytics
     box: wso2iot
@@ -34,6 +36,7 @@ servers:
     ram: 2048
     cpu: 1
     provisioner_script: analytics/provisioner/product_provisioner.sh
+    conf_dir: analytics/repository
   -
     hostname: iot-server
     box: wso2iot
@@ -43,3 +46,4 @@ servers:
     ram: 2048
     cpu: 1
     provisioner_script: iot/provisioner/product_provisioner.sh
+    conf_dir: iot

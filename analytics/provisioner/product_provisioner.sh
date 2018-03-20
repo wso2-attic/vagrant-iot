@@ -23,8 +23,7 @@ WORKING_DIRECTORY=/home/vagrant
 JAVA_HOME=/opt/java/
 WUM_HOME=/usr/local
 WUM_PATH=PATH=$PATH:/usr/local/wum/bin
-DEFAULT_MOUNT=/vagrant
-CONFIGURATIONS=${DEFAULT_MOUNT}/analytics
+CONFIGURATIONS=${WORKING_DIRECTORY}/analytics
 
 # operate in anti-fronted mode with no user interaction
 export DEBIAN_FRONTEND=noninteractive
@@ -69,6 +68,9 @@ echo "Successfully copied the files."
 
 export JAVA_HOME
 export WUM_PATH
+
+echo "Removing configurations directories."
+rm -rf ${CONFIGURATIONS}
 
 # start the WSO2 product pack as a background service
 echo "Starting ${WSO2_SERVER}-${WSO2_SERVER_VERSION}..."

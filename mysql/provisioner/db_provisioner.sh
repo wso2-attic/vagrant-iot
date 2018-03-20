@@ -18,10 +18,11 @@
 
 DB_USER=root
 DB_PASSWORD=wso2carbon
+WORKING_DIRECTORY=/home/vagrant
 
 # run product db script
 echo "Execute the database scripts..."
-mysql -u${DB_USER} -p${DB_PASSWORD} -e "source /vagrant/mysql/scripts/mysql.sql"
+mysql -u${DB_USER} -p${DB_PASSWORD} -e "source ${WORKING_DIRECTORY}/mysql/scripts/mysql.sql"
 echo "Successfully executed the database scripts."
 
 # grants root access to MySQL server from any host
@@ -33,3 +34,6 @@ echo "Grant access to the user..."
 mysql -u${DB_USER} -p${DB_PASSWORD} -e "grant all privileges on *.* to 'root'@'%' with grant option;"
 mysql -u${DB_USER} -p${DB_PASSWORD} -e "flush privileges;"
 echo "Successfully granted access to the user."
+
+echo "Removing configurations directories."
+rm -rf ${WORKING_DIRECTORY}/mysql
