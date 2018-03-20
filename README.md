@@ -24,7 +24,7 @@ git clone https://github.com/wso2/vagrant-iot.git
 > If you are to try out an already released zip of this repo, please ignore this 1st step.
 
 
-3. Move to `vagrant-iot` folder.
+2. Move to `vagrant-iot` folder.
 
 ```
 cd vagrant-iot
