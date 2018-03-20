@@ -1,5 +1,9 @@
 # Vagrantfile for WSO2 IoT Server
 
+In order to use Vagrant boxes, you will need an active subscription from WSO2 since the Vagrant boxes hosted at vagrant.wso2.com contains the latest updates and fixes to WSO2 IoT Server. You can sign up for a Free Trial Subscription [here](https://wso2.com/free-trial-subscription).
+
+If you wish to use the Vagrant boxes without updates, please build them from [here](https://github.com/wso2/vagrant-boxes).
+
 This section defines the procedure to run Vagrant resources of the WSO2 IoT Server.
 
 Please note that in order to run these Vagrant resources, you need to install
