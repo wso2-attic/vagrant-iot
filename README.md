@@ -19,7 +19,7 @@ Virtualization should be enabled in BIOS settings before building the boxes.
 1. Checkout this repository into your local machine using the following Git command.
 
 ```
-git clone https://github.com/wso2/vagrant-iot.git
+    git clone https://github.com/wso2/vagrant-iot.git
 ```
 > If you are to try out an already released zip of this repo, please ignore this 1st step.
 
@@ -27,7 +27,7 @@ git clone https://github.com/wso2/vagrant-iot.git
 2. Move to `vagrant-iot` folder.
 
 ```
-cd vagrant-iot
+    cd vagrant-iot
 ```
 >If you are to try out an already released zip of this repo, please ignore this 2nd step also. Instead, extract the zip file and directly browse to `vagrant-iot-<released-version>` folder.
 
