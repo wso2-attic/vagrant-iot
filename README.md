@@ -29,7 +29,7 @@ git clone https://github.com/wso2/vagrant-iot.git
 ```
 cd vagrant-iot
 ```
->If you are to try out an already released zip of this repo, please ignore this 2nd step also. Instead, extract the zip file and directly browse to `vagrant-sp-<released-version>` folder.
+>If you are to try out an already released zip of this repo, please ignore this 2nd step also. Instead, extract the zip file and directly browse to `vagrant-iot-<released-version>` folder.
 
 >If you are to try out an already released tag, after executing 2nd step, checkout the relevant tag, i.e. for example: <br> git checkout tags/v4.0.0.2 and continue below steps.
 
