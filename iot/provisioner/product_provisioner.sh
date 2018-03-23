@@ -89,4 +89,4 @@ do
   [[ "${LOG_LINE}" == *"admin--android_sense was added to the Synapse configuration successfully"* ]] && pkill tail
 done
 
-echo "Management console URL: https://172.28.128.5:9443/carbon"
+echo "Management console URL: https://localhost:9443/carbon"
