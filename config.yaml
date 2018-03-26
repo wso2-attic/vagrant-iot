@@ -14,7 +14,7 @@
 
 servers:
   -
-    hostname: mysql
+    hostname: wso2-mysql
     box: wso2-mysql
     ip: 172.28.128.3
     ram: 2048
@@ -25,6 +25,8 @@ servers:
     hostname: broker
     box: wso2iot
     ip: 172.28.128.4
+    ports:
+      - 9446
     ram: 2048
     cpu: 1
     provisioner_script: broker/provisioner/product_provisioner.sh
@@ -33,6 +35,8 @@ servers:
     hostname: analytics
     box: wso2iot
     ip: 172.28.128.6
+    ports:
+      - 9445
     ram: 2048
     cpu: 1
     provisioner_script: analytics/provisioner/product_provisioner.sh
