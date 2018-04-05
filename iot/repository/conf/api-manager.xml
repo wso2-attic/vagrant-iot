@@ -200,10 +200,10 @@
         API key validator configuration used by API key manager (IS), API store and API gateway.
         API gateway uses it to validate and authenticate users against the provided API keys.
     -->
-    <APIKeyValidator><!-- Server URL of the API key manager --><ServerURL>https://172.28.128.5:${mgt.transport.https.port}${carbon.context}services/</ServerURL>
+    <APIKeyValidator>
+	<!-- Server URL of the API key manager -->
+	<ServerURL>https://172.28.128.5:9443${carbon.context}services/</ServerURL>
         
-        <ServerURL>https://${iot.keymanager.host}:${iot.keymanager.https.port}${carbon.context}services/</ServerURL>
-
         <!-- Admin username for API key manager. -->
         <Username>${admin.username}</Username>
         <!-- Admin password for API key manager. -->
