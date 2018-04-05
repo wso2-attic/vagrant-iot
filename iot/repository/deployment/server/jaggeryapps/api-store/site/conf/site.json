@@ -10,7 +10,7 @@
     "ssoConfiguration" : {
         "enabled" : "true",
         "issuer" : "API_STORE",
-        "identityProviderUrl" : "https://172.28.128.5:9443/samlsso",
+        "identityProviderURL" : "https://172.28.128.5:9443/samlsso",
         "keyStorePassword" : "",
         "identityAlias" : "",
         "responseSigningEnabled":"true",
@@ -23,7 +23,7 @@
     "oidcConfiguration" : {
       "enabled" : "false",
       "issuer" : "API_STORE",
-      "identityProviderUrl" : "https://172.28.128.5:9443/samlsso",
+      "identityProviderURI" : "http://172.28.128.5:8080/openid-connect-server-webapp/",
       "authorizationEndpointURI" : "http://172.28.128.5:8080/openid-connect-server-webapp/authorize",
       "tokenEndpointURI" : "http://172.28.128.5:8080/openid-connect-server-webapp/token",
       "userInfoURI" : "http://172.28.128.5:8080/openid-connect-server-webapp/userinfo",
