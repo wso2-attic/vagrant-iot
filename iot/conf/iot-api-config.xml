@@ -19,22 +19,23 @@
 
 <ServerConfiguration>
     <!-- IoT server host name, this is referred from APIM gateway to call to IoT server for certificate validation-->
-    <Hostname>https://172.28.128.5:9443/</Hostname>
+    <Hostname>https://localhost:9443/</Hostname>
 
     <!--End point to verify the certificate-->
-    <VerificationEndpoint>https://172.28.128.5:9443/api/certificate-mgt/v1.0/admin/certificates/verify/</VerificationEndpoint>
+    <VerificationEndpoint>https://localhost:9443/api/certificate-mgt/v1.0/admin/certificates/verify/</VerificationEndpoint>
 
     <!--Admin username/password - this is to use for oauth token generation-->
     <Username>admin</Username>
     <Password>admin</Password>
 
     <!--Dynamic client registration endpoint-->
-    <DynamicClientRegistrationEndpoint>https://172.28.128.5:9443/client-registration/v0.12/register</DynamicClientRegistrationEndpoint>
+    <DynamicClientRegistrationEndpoint>https://localhost:9443/client-registration/v0.12/register</DynamicClientRegistrationEndpoint>
 
     <!--Oauth token endpoint-->
-    <OauthTokenEndpoint>https://172.28.128.5:9443/oauth2/token</OauthTokenEndpoint>
+    <OauthTokenEndpoint>https://localhost:9443/oauth2/token</OauthTokenEndpoint>
 
     <APIS>
         <ContextPath>/services</ContextPath>
     </APIS>
 </ServerConfiguration>
+

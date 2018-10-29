@@ -49,7 +49,7 @@
         <SignatureAlgorithm>SHA256withRSA</SignatureAlgorithm>
 
         <!-- This parameter specifies which implementation should be used for generating the Token. JWTGenerator is the
-	     default implementation provided. -->
+         default implementation provided. -->
         <!--JWTGeneratorImpl>org.wso2.carbon.apimgt.keymgt.token.JWTGenerator</JWTGeneratorImpl-->
 
         <!-- This parameter specifies which implementation should be used for generating the Token. For URL safe JWT
@@ -61,8 +61,8 @@
     </JWTConfiguration>
 
     <!-- Primary/secondary login configuration for APIstore. If user likes to keep two login attributes in a distributed setup, to login the APIstore,
-		he should configure this section. Primary login doesn't have a claimUri associated with it. But secondary login, which is a claim attribute,
-		is associated with a claimuri.-->
+        he should configure this section. Primary login doesn't have a claimUri associated with it. But secondary login, which is a claim attribute,
+        is associated with a claimuri.-->
     <!--LoginConfig>
             <UserIdLogin  primary="true">
         <ClaimUri></ClaimUri>
@@ -201,8 +201,8 @@
         API gateway uses it to validate and authenticate users against the provided API keys.
     -->
     <APIKeyValidator>
-	<!-- Server URL of the API key manager -->
-	<ServerURL>https://172.28.128.5:9443${carbon.context}services/</ServerURL>
+    <!-- Server URL of the API key manager -->
+    <ServerURL>https://localhost:9443${carbon.context}services/</ServerURL>
         
         <!-- Admin username for API key manager. -->
         <Username>${admin.username}</Username>
@@ -215,7 +215,7 @@
              -If you are at the Gateway node, you need to point "ThriftClientPort" value to the "ThriftServerPort" value given at KeyManager node.
              -If you need to start two API Manager instances in the same machine, you need to give different ports to "ThriftServerPort" value in two nodes.
              -ThriftServerHost - Allows to configure a hostname for the thrift server. It uses the carbon hostname by default.
-	         -The Gateway uses this parameter to connect to the key validation thrift service. -->
+             -The Gateway uses this parameter to connect to the key validation thrift service. -->
         <KeyValidatorClientType>WSClient</KeyValidatorClientType>
         <ThriftClientConnectionTimeOut>10000</ThriftClientConnectionTimeOut>
         <!--ThriftClientPort>10397</ThriftClientPort-->
@@ -264,7 +264,7 @@
              In distributed deployment we should configure this property in key manager node by pointing
              gateway https( /http, we recommend users to use 'https' endpoints for security purpose) url.
              Also please note that we should point gateway revoke service to key manager -->
-        <RevokeAPIURL>https://172.28.128.5:8243/revoke</RevokeAPIURL>
+        <RevokeAPIURL>https://localhost:8243/revoke</RevokeAPIURL>
         <!-- Whether to encrypt tokens when storing in the Database
         Note: If changing this value to true, change the value of <TokenPersistenceProcessor> to
         org.wso2.carbon.identity.oauth.tokenprocessor.EncryptionDecryptionPersistenceProcessor in the identity.xml -->

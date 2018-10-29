@@ -143,7 +143,7 @@
                 </configuration>
             </definition>
         </datasource>
-        
+
         <datasource>
             <name>WSO2_USER_DB</name>
             <description>The datasource is used for user mangement and userstore</description>
@@ -152,10 +152,10 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:mysql://172.28.128.3:3306/WSO2_USER_DB?autoReconnect=true</url>
+                    <url>jdbc:mysql://172.28.128.3:3306/WSO2_USER_DB?autoReconnect=true&amp;useSSL=false</url>
                     <username>root</username>
                     <password>wso2carbon</password>
-                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
                     <testOnBorrow>true</testOnBorrow>
@@ -166,4 +166,6 @@
         </datasource>
 
     </datasources>
+
+
 </datasources-configuration>

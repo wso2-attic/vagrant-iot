@@ -16,13 +16,10 @@
 WSO2_SERVER=wso2iot
 WSO2_SERVER_VERSION=3.3.0
 WSO2_SERVER_PACK=${WSO2_SERVER}-${WSO2_SERVER_VERSION}*.zip
-MYSQL_CONNECTOR=mysql-connector-java-5.1.*-bin.jar
+MYSQL_CONNECTOR=mysql-connector-java-*.jar
 JDK_ARCHIVE=jdk-8u*-linux-x64.tar.gz
-WUM_ARCHIVE=wum-1.0-linux-x64.tar.gz
 WORKING_DIRECTORY=/home/vagrant
 JAVA_HOME=/opt/java/
-WUM_HOME=/usr/local
-WUM_PATH=PATH=$PATH:/usr/local/wum/bin
 CONFIGURATIONS=${WORKING_DIRECTORY}/analytics
 
 # operate in anti-fronted mode with no user interaction
@@ -41,14 +38,6 @@ if test ! -d ${JAVA_HOME}; then
   echo "Successfully set up Java"
 fi
 
-# set up wum
-echo "Setting up WUM."
-if test ! -d ${WUM_HOME}; then
-  mkdir ${WUM_HOME};
-  tar -xf ${WORKING_DIRECTORY}/${WUM_ARCHIVE} -C ${WUM_HOME} --strip-components=1
-  echo "Successfully set up WUM."
-fi
-
 #setting up the server
 if test ! -d ${WSO2_SERVER}-${WSO2_SERVER_VERSION}; then
   unzip -q ${WORKING_DIRECTORY}/${WSO2_SERVER_PACK} -d ${WORKING_DIRECTORY}
@@ -62,12 +51,10 @@ echo "Successfully copied the MySQL driver to the server pack."
 
 # copy files with configuration changes
 echo "Copying the files with configuration changes to the server pack..."
-cp -TRv ${CONFIGURATIONS}/repository/conf/ ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/wso2/analytics/conf/datasources/
-cp -TRv ${CONFIGURATIONS}/repository/resources/security/ ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/wso2/analytics/repository/resources/security/
+cp -TRv ${CONFIGURATIONS}/repository/conf/ ${WORKING_DIRECTORY}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/wso2/analytics/conf/
 echo "Successfully copied the files."
 
 export JAVA_HOME
-export WUM_PATH
 
 echo "Removing configurations directories."
 rm -rf ${CONFIGURATIONS}

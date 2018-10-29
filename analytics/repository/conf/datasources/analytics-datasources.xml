@@ -16,7 +16,7 @@
                     <url>jdbc:mysql://172.28.128.3:3306/WSO2_ANALYTICS_EVENT_STORE_DB?autoReconnect=true</url>
                     <username>root</username>
                     <password>wso2carbon</password>
-                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
                     <validationQuery>SELECT 1</validationQuery>
@@ -37,7 +37,7 @@
                     <url>jdbc:mysql://172.28.128.3:3306/WSO2_ANALYTICS_PROCESSED_DATA_STORE_DB?autoReconnect=true</url>
                     <username>root</username>
                     <password>wso2carbon</password>
-                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
                     <validationQuery>SELECT 1</validationQuery>
